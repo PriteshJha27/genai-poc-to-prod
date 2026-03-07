@@ -21,8 +21,13 @@ python main.py --provider openai  # Use OpenAI
   - a minimalistic project structuce with logging, configs, pydantic models and exceptions.
   - a chat capability with llm providers (ollama / openai)
   - a simple UI using chainlit as a chat interface & a cli based chat system.
+- Go to Branch : feature/memory
+  - Read the notebook explore_memory.ipynb
+  - refer the docs.
+  - refer /sql/init.sql with pgadmin or postgresql instance your your machine.
+  - Check the updates in /src/memory/
 
-**Currently what this repo lacks?**
+**What initial application version (branch : beginners-app) was lacking with?**
 
 - Query is directly sent to the llm; without actually understanding what the user needs (intent), how complex the query can be?
 - Chat conversations have no history present. Only the current message context is being used.
@@ -45,6 +50,26 @@ python main.py --provider openai  # Use OpenAI
 - Tool calling
 - Workflows & Agents
 - A good system design!
+
+----
+
+**What has been covered from the checklist:**
+
+- [x] **Memory** — PostgreSQL-backed conversation history per user per session. History is injected as context into every LLM call.
+- [x] **Multi-user support** — Login with email/password. Each user sees only their own sessions and messages.
+
+**Still to address:**
+
+- [ ] Query Analysis / Intent detection
+- [ ] Feedback Learning
+- [ ] RAG
+- [ ] Guardrails
+- [ ] Evaluations
+- [ ] Tool calling
+- [ ] Workflows
+- [ ] Agents
+
+----
 
 ## License
 
